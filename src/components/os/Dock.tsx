@@ -1,5 +1,6 @@
 "use client";
 import { useWindows, type AppId } from "@/store/windows";
+import { pathFor, setUrl } from "@/lib/url";
 
 const apps: { id: AppId; label: string; hobby: string; onClass: string }[] = [
   { id: "projects", label: "Projects", hobby: "kitchen", onClass: "bg-gold text-[#111]" },
@@ -11,6 +12,7 @@ const apps: { id: AppId; label: string; hobby: string; onClass: string }[] = [
 export default function Dock() {
   const windows = useWindows((s) => s.windows);
   const toggle = useWindows((s) => s.toggle);
+  const projectSlug = useWindows((s) => s.projectSlug);
 
   return (
     <nav
@@ -23,7 +25,12 @@ export default function Dock() {
           <button
             key={a.id}
             data-cursor="OPEN"
-            onClick={() => toggle(a.id)}
+            onClick={() => {
+              toggle(a.id);
+              const path = pathFor(a.id, projectSlug);
+              if (!open) setUrl(path);
+              else if (window.location.pathname === path) setUrl("/");
+            }}          
             aria-pressed={open}
             className={`flex h-[70px] w-[92px] flex-col items-center justify-center gap-0.5 ${
               i > 0 ? "border-l-[3px] border-line" : ""

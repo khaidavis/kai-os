@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { useWindows, type AppId } from "@/store/windows";
+import { pathFor, setUrl } from "@/lib/url";
 
 type Props = {
   id: AppId;
@@ -14,6 +15,7 @@ export default function Window({ id, title, width, children }: Props) {
   const focus = useWindows((s) => s.focus);
   const close = useWindows((s) => s.close);
   const move = useWindows((s) => s.move);
+  const projectSlug = useWindows((s) => s.projectSlug);
   const drag = useRef<{ sx: number; sy: number; ox: number; oy: number } | null>(null);
 
   if (!win.open) return null;
@@ -39,8 +41,14 @@ export default function Window({ id, title, width, children }: Props) {
       role="dialog"
       aria-label={title}
       tabIndex={-1}
-      onPointerDown={() => focus(id)}
-      onKeyDown={(e) => e.key === "Escape" && close(id)}
+      onPointerDown={() => {
+        focus(id);
+        setUrl(pathFor(id, projectSlug));
+      }}
+      onClick={() => {
+            close(id);
+            if (window.location.pathname === pathFor(id, projectSlug)) setUrl("/");
+      }}     
       style={{ left: win.x, top: win.y, zIndex: win.z, width }}
       className="absolute border-[3px] border-line bg-panel shadow-[10px_10px_0_var(--shadow)] outline-none"
     >
