@@ -15,13 +15,13 @@ type WindowState = {
 };
 
 export const useWindows = create<WindowState>((set, get) => ({
-  windows: {
+    windows: {
     projects: { open: true, x: 48, y: 32, z: 1 },
-    about: { open: false, x: 700, y: 32, z: 0 },
+    about: { open: true, x: 700, y: 32, z: 2 },
     skills: { open: false, x: 960, y: 80, z: 0 },
-    proof: { open: false, x: 700, y: 440, z: 0 },
+    proof: { open: true, x: 700, y: 470, z: 3 },
   },
-  top: 1,
+  top: 3,
 
   focus: (id) => {
     if (get().windows[id].z === get().top) return; // already in front
