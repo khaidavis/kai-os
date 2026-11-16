@@ -30,3 +30,31 @@
 
 **Next**
 - Menu bar + day/night toggle (first real component)
+
+## Session 2 — 2026-11-15 · Menu bar + day/night theme
+
+**Built**
+- MenuBar component (KAI OS block, tagline, Resume link)
+- ThemeToggle: switches day ↔ late night, remembers choice
+- Fonts via next/font (Archivo + IBM Plex Mono)
+- VS Code Tailwind settings
+
+**Why**
+- Theme as CSS variables → one attribute flip recolors the whole site, no React re-render
+- Head script sets theme before paint → no white flash for night-mode visitors
+- Fonts bundled at build → no waiting on Google Fonts
+
+**Concepts learned**
+- CSS variables (`--bg`, `--ink`) + `[data-theme="night"]` override
+- Tailwind v4 `@theme inline` turns variables into classes (`bg-panel`, `text-ink`)
+- Server components (default, no JS shipped) vs client components (`"use client"`, for clicks/state)
+- `useState` + `useEffect`: read the theme once after the page loads
+- `localStorage` saves small preferences in the browser
+- Editor warnings ≠ build errors
+
+**Commands**
+- `mkdir` / `New-Item` — create folders/files in PowerShell
+- `git log --oneline` — view commit history
+
+**Next**
+- projects.ts (data file), then the Window component
