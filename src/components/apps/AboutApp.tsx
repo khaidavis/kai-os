@@ -1,9 +1,12 @@
+import RevealHeadline from "@/components/os/RevealHeadline";
+
 export default function AboutApp() {
   return (
     <div className="flex flex-col gap-3.5 p-6">
-      <h1 className="text-[40px] font-black leading-[0.98] tracking-tight">
-        I build backends that don&apos;t double-book.
-      </h1>
+      <RevealHeadline
+        text="I build backends that don't double-book."
+        className="text-[40px] font-black leading-[0.98] tracking-tight"
+      />
       <p className="text-[15px] leading-relaxed">
         Computing student at UTech, Jamaica, graduating May 2027. I build secure Java backends and the
         Next.js interfaces on top of them.

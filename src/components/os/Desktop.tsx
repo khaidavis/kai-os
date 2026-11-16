@@ -1,5 +1,6 @@
 "use client";
 import Window from "./Window";
+import CursorLabel from "./CursorLabel";
 import Dock from "./Dock";
 import ProjectsApp from "@/components/apps/ProjectsApp";
 import AboutApp from "@/components/apps/AboutApp";

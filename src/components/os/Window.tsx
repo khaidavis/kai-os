@@ -45,6 +45,7 @@ export default function Window({ id, title, width, children }: Props) {
       className="absolute border-[3px] border-line bg-panel shadow-[10px_10px_0_var(--shadow)] outline-none"
     >
       <div
+        data-cursor="DRAG"
         onPointerDown={startDrag}
         onPointerMove={onDrag}
         onPointerUp={endDrag}
@@ -52,6 +53,7 @@ export default function Window({ id, title, width, children }: Props) {
       >
         <span>{title}</span>
         <button
+          data-cursor="CLOSE"
           onClick={() => close(id)}
           aria-label={`Close ${title}`}
           className="h-7 w-7 border-2 border-line bg-panel font-bold"
