@@ -58,3 +58,5 @@
 
 **Next**
 - projects.ts (data file), then the Window component
+
+“Union types + optional fields (?) — TypeScript catches bad data before runtime.”
