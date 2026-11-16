@@ -17,14 +17,27 @@ export default function AboutApp() {
       </p>
       <span className="font-mono text-xs font-semibold">OPEN TO SOFTWARE ROLES · [ROLE / LOCATION]</span>
       <div className="flex flex-wrap gap-2.5">
-        <a href="/resume.pdf" className="flex min-h-11 items-center border-[3px] border-line bg-[#111] px-4 font-mono text-[13px] font-semibold text-gold">
+        <a
+          data-cursor="OPEN"
+          href="/resume.pdf"
+          className="flex min-h-11 items-center border-[3px] border-line bg-[#111] px-4 font-mono text-[13px] font-semibold text-gold"
+        >
           RESUME.PDF
         </a>
-        <a href="https://github.com/khaidavis" target="_blank" rel="noopener noreferrer"
-           className="flex min-h-11 items-center border-[3px] border-line px-4 font-mono text-[13px] font-semibold">
+        <a
+          data-cursor="OPEN"
+          href="https://github.com/khaidavis"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex min-h-11 items-center border-[3px] border-line px-4 font-mono text-[13px] font-semibold"
+        >
           GITHUB
         </a>
-        <a href="#" className="flex min-h-11 items-center border-[3px] border-line px-4 font-mono text-[13px] font-semibold">
+        <a
+          data-cursor="OPEN"
+          href="#"
+          className="flex min-h-11 items-center border-[3px] border-line px-4 font-mono text-[13px] font-semibold"
+        >
           [LINKEDIN]
         </a>
       </div>

@@ -22,6 +22,7 @@ export default function Dock() {
         return (
           <button
             key={a.id}
+            data-cursor="OPEN"
             onClick={() => toggle(a.id)}
             aria-pressed={open}
             className={`flex h-[70px] w-[92px] flex-col items-center justify-center gap-0.5 ${

@@ -28,14 +28,24 @@ export default function ProjectsApp() {
 
       <div className="flex flex-wrap gap-3">
         {p.liveUrl && (
-          <a href={p.liveUrl} target="_blank" rel="noopener noreferrer"
-             className="flex min-h-11 items-center border-[3px] border-line bg-gold px-4 font-mono text-[13px] font-semibold text-[#111]">
+          <a
+            data-cursor="OPEN"
+            href={p.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-h-11 items-center border-[3px] border-line bg-gold px-4 font-mono text-[13px] font-semibold text-[#111]"
+          >
             TASTE IT LIVE →
           </a>
         )}
         {p.codeUrl && (
-          <a href={p.codeUrl} target="_blank" rel="noopener noreferrer"
-             className="flex min-h-11 items-center border-[3px] border-line px-4 font-mono text-[13px] font-semibold">
+          <a
+            data-cursor="OPEN"
+            href={p.codeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-h-11 items-center border-[3px] border-line px-4 font-mono text-[13px] font-semibold"
+          >
             READ THE CODE
           </a>
         )}
